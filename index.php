@@ -1,4 +1,10 @@
-<?<!DOCTYPE html>
+<?php
+include 'db.php';
+
+$result = $conn->query("SELECT * FROM tasks ORDER BY created_at DESC");
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,6 +23,28 @@
     </form>
 
     
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+   <?php while($task = $result->fetch_assoc()) { ?>
+            <tr>
+                <td><?php echo $task['id']; ?></td>
+                <td><?php echo $task['title']; ?></td>
+                <td><?php echo $task['description']; ?></td>
+                <td><?php echo $task['status']; ?></td>
+                <td>
+                    <a href="edit_task.php?id=<?php echo $task['id']; ?>">Edit</a>
+                    <a href="delete_task.php?id=<?php echo $task['id']; ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+        <?php } ?>
+    </table>
     </div>
 </body>
 </html>
+
