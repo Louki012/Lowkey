@@ -1,0 +1,147 @@
+/* General Reset and Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    padding: 30px;
+    animation: popUp 0.5s ease-out;
+}
+
+/* Header Styling */
+.container h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: Times New Roman;
+}
+
+/* Form Styling */
+.container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.container form input[type="text"],
+.container form textarea,
+.container form select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+    width: 100%;
+}
+
+.container form input[type="text"]:focus,
+.container form textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.container form button {
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container form button:hover {
+    background-color: #2980b9;
+}
+
+/* Task Table Styling */
+.container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.container table, .container th, .container td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.container th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.container td {
+    background-color: #fafafa;
+}
+
+/* Table Row Hover Effect */
+.container tr:hover {
+    background-color: #ecf0f1;
+}
+
+.container td a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.container td a:hover {
+    color: #2c3e50;
+}
+
+/* Delete Button Hover Effect */
+.delete-btn {
+    color: #e74c3c;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+    color: #c0392b;
+}
+
+/* Animations */
+@keyframes popUp {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Button Focus Animation */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.6);
+}
